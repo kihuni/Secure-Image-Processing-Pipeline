@@ -83,10 +83,7 @@ pip install -r requirements.txt
 ```
 This installs `flask, pulumi-esc-sdk, clarifai-grpc, and pcloud`.
 
-Create Required Directories:
-```
-mkdir uploads results
-```
+
 ### Pulumi ESC Configuration
 
 Pulumi ESC is used to manage sensitive data securely. Set up your environment as follows:
