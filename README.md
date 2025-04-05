@@ -20,8 +20,6 @@ This project was built for the Pulumi Deploy and Document Challenge: Shhh, It's 
 - [Usage](#Usage)
     - [Running Locally](#Running-Locally)
 
-    - [Deploying on PythonAnywhere](#deploying-on-pythonanywhere)
-
 - [Security Best Practices](#Security-Best-Practices)
 
 - [Troubleshooting](#Troubleshooting)
@@ -135,65 +133,6 @@ Access the UI:
 
 - The results are also uploaded to pCloud in the /hackathon-results folder.
 
-### Deploying on PythonAnywhere
-
-To make the app accessible online, deploy it to PythonAnywhere:
-
-Sign Up for PythonAnywhere:
-- Create a free account at [pythonanywhere.com](https://www.pythonanywhere.com/).
-
-Upload the Project:
-
-- In the “Files” tab, create a directory: /home/yourusername/Secure-Image-Processing-Pipeline.
-
-- Upload app.py, requirements.txt, and the templates/ directory.
-
-- Create the uploads and results directories:
-
-```
-mkdir /home/yourusername/Secure-Image-Processing-Pipeline/uploads
-mkdir /home/yourusername/Secure-Image-Processing-Pipeline/results
-```
-
-Set Up a Virtual Environment:
-
-Open a Bash console and create a virtual environment:
-
-```
-mkvirtualenv --python=/usr/bin/python3.10 my-venv
-cd /home/yourusername/Secure-Image-Processing-Pipeline
-pip install -r requirements.txt
-```
-
-Configure the Web App:
-
-- In the “Web” tab, add a new web app with manual configuration (Python 3.10).
-
-- Set the source code path: /home/yourusername/Secure-Image-Processing-Pipeline.
-
-- Set the virtualenv path: /home/yourusername/.virtualenvs/my-venv.
-
-- Edit the WSGI file (/var/www/yourusername_pythonanywhere_com_wsgi.py):
-
-```
-import sys
-
-path = '/home/yourusername/Secure-Image-Processing-Pipeline'
-if path not in sys.path:
-    sys.path.insert(0, path)
-
-from app import app as application
-```
-
-Set the PULUMI_ACCESS_TOKEN environment variable in the “Environment Variables” section:
-- Name: PULUMI_ACCESS_TOKEN
-
-- Value: your-pulumi-access-token
-
-Reload and Test:
-- Click the “Reload” button in the “Web” tab.
-
-- Visit https://yourusername.pythonanywhere.com to use the app online.
 
 ### Security Best Practices
 - Use Pulumi ESC for Secrets: All sensitive data (Clarifai API key, pCloud credentials) is stored in Pulumi ESC, which encrypts secrets at rest and provides audit logs for transparency.
