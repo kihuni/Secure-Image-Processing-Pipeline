@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Processing Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            color: #333;
+        }
+        .result-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background-color: #e9ecef;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 3px;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 20px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Image Processing Results</h1>
+    <div class="result-container">
+        <img src="{{ url_for('serve_uploads', filename=image_filename) }}" alt="Uploaded Image">
+        <h2>Detected Labels:</h2>
+        <ul>
+            {% for label in labels %}
+                <li>{{ label }}</li>
+            {% endfor %}
+        </ul>
+        <p>Results saved to: <a href="{{ url_for('serve_results', filename='analysis_results.json') }}" target="_blank">{{ output_path }}</a></p>
+        <p>Also uploaded to pCloud in folder: /hackathon-results</p>
+        <a href="{{ url_for('index') }}" class="back-link">Process Another Image</a>
+    </div>
+</body>
+</html>
