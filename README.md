@@ -6,25 +6,25 @@ This project was built for the Pulumi Deploy and Document Challenge: Shhh, It's 
 
 
 ## Table of Contents
-- Features (#features)
+- [Features](#features)
 
-- Project Structure (#project-structure)
+- [Project Structure](#project-structure)
 
-- Prerequisites (#prerequisites)
+- [Prerequisites](#prerequisites)
 
-- Setup (#setup)
+- [Setup](#setup)
     - Local Setup (#local-setup)
 
     - Pulumi ESC Configuration (#pulumi-esc-configuration)
 
-- Usage (#usage)
+- [Usage](#usage)
     - Running Locally (#running-locally)
 
     - Deploying on PythonAnywhere (#deploying-on-pythonanywhere)
 
-- Security Best Practices (#security-best-practices)
+- [Security Best Practices](#security-best-practices)
 
-- Troubleshooting (#troubleshooting)
+- [Troubleshooting](#troubleshooting)
 
 
 ### Features
