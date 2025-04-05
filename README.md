@@ -12,7 +12,7 @@ This project was built for the Pulumi Deploy and Document Challenge: Shhh, It's 
 
 - Prerequisites (#prerequisites)
 
--Setup (#setup)
+- Setup (#setup)
     - Local Setup (#local-setup)
 
     - Pulumi ESC Configuration (#pulumi-esc-configuration)
